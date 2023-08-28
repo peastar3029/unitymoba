@@ -2040,7 +2040,7 @@ public class NTGBattleUnitControllerWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			NTGBattleUnitController obj = (NTGBattleUnitController)o;
-			UnityEngine.NavMeshAgent ret = obj.navAgent;
+			UnityEngine.AI.NavMeshAgent ret = obj.navAgent;
 			ToLua.Push(L, ret);
 			return 1;
 		}
@@ -3670,7 +3670,7 @@ public class NTGBattleUnitControllerWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			NTGBattleUnitController obj = (NTGBattleUnitController)o;
-			UnityEngine.NavMeshAgent arg0 = (UnityEngine.NavMeshAgent)ToLua.CheckUnityObject(L, 2, typeof(UnityEngine.NavMeshAgent));
+			UnityEngine.AI.NavMeshAgent arg0 = (UnityEngine.AI.NavMeshAgent)ToLua.CheckUnityObject(L, 2, typeof(UnityEngine.AI.NavMeshAgent));
 			obj.navAgent = arg0;
 			return 0;
 		}

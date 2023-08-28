@@ -520,7 +520,7 @@ public class UnityEngine_ShaderWrap
 	{
 		try
 		{
-			ToLua.Push(L, UnityEngine.Shader.globalShaderHardwareTier);
+			ToLua.Push(L, UnityEngine.Graphics.activeTier);
 			return 1;
 		}
 		catch(Exception e)
@@ -586,8 +586,8 @@ public class UnityEngine_ShaderWrap
 	{
 		try
 		{
-			UnityEngine.Rendering.ShaderHardwareTier arg0 = (UnityEngine.Rendering.ShaderHardwareTier)ToLua.CheckObject(L, 2, typeof(UnityEngine.Rendering.ShaderHardwareTier));
-			UnityEngine.Shader.globalShaderHardwareTier = arg0;
+			UnityEngine.Rendering.GraphicsTier arg0 = (UnityEngine.Rendering.GraphicsTier)ToLua.CheckObject(L, 2, typeof(UnityEngine.Rendering.GraphicsTier));
+			UnityEngine.Graphics.activeTier = arg0;
 			return 0;
 		}
 		catch(Exception e)

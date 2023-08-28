@@ -37,8 +37,8 @@ public class UTGBattleSkillBehaviourR60000041 : NTGBattleSkillBehaviour
 
         collider.enabled = true;
 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(transform.position + transform.forward*range*2, out hit, 0.5f, NavMesh.AllAreas))
+        UnityEngine.AI.NavMeshHit hit;
+        if (UnityEngine.AI.NavMesh.SamplePosition(transform.position + transform.forward*range*2, out hit, 0.5f, UnityEngine.AI.NavMesh.AllAreas))
         {
             if (owner.alive && owner.navAgent != null)
                 owner.navAgent.enabled = false;

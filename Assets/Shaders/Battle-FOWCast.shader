@@ -1,4 +1,6 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 Shader "NTG/Battle/FOWCast"
 {
@@ -33,7 +35,7 @@ Shader "NTG/Battle/FOWCast"
 			v2f vert(appdata_base input)
 			{
 				v2f output;
-				output.pos = mul (UNITY_MATRIX_MVP, input.vertex);
+				output.pos = UnityObjectToClipPos (input.vertex);
 
 				half4 UVFogOfWar = mul (mul (_MatCastViewProj, unity_ObjectToWorld), input.vertex);
 

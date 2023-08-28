@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Simplified Additive Particle shader. Differences from regular Additive Particle one:
 // - no Tint color
 // - no Smooth particle support
@@ -37,7 +39,7 @@ Category {
 				v2f vert(appdata_tan v)   
 				{   
 					v2f o;   
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);  
+					o.pos = UnityObjectToClipPos (v.vertex);  
 					o.uv = v.texcoord; 
 					return o;    
 				}   
@@ -67,7 +69,7 @@ Category {
 				v2f vert(appdata_tan v)   
 				{   
 					v2f o;   
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);  
+					o.pos = UnityObjectToClipPos (v.vertex);  
 					o.uv = v.texcoord; 
 					return o;    
 				}   

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "NTG/Scene/Cutout" {
 Properties {
         _MainTex ("Base", 2D) = "white" {}
@@ -40,7 +42,7 @@ Properties {
                 v2f vert(appdata_full v)
                 {
                     v2f o;
-                    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                    o.pos = UnityObjectToClipPos(v.vertex);
                     o.pack0.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
  
                     #ifdef LIGHTMAP_ON

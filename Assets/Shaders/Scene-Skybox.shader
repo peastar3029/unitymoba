@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "NTG/Scene/Skybox" {   
     Properties {   
         _Color ("Main Color", Color) = (1,1,1,1)    
@@ -25,7 +27,7 @@ Shader "NTG/Scene/Skybox" {
 			{   
 				v2f o;   
 				float4 v2 = v.vertex; 
-				o.pos = mul (UNITY_MATRIX_MVP, v2);  
+				o.pos = UnityObjectToClipPos (v2);  
 				o.pos.z = 0;
 				o.uv = TRANSFORM_TEX (v.texcoord, _MainTex); 
 				return o;    

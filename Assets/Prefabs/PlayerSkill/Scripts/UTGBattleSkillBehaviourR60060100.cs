@@ -36,7 +36,7 @@ public class UTGBattleSkillBehaviourR60060100 : NTGBattleSkillBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        owner.transform.GetComponent<NavMeshAgent>().enabled = false;
+        owner.transform.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
         float height = owner.transform.localPosition.y;
 
@@ -45,7 +45,7 @@ public class UTGBattleSkillBehaviourR60060100 : NTGBattleSkillBehaviour
         owner.transform.localPosition = new Vector3(owner.transform.localPosition.x + pDistance * rateX
                                         , owner.transform.localPosition.y, owner.transform.localPosition.z + pDistance * rateY);
         owner.transform.localPosition = new Vector3(owner.transform.localPosition.x, height, owner.transform.localPosition.z);
-        owner.transform.GetComponent<NavMeshAgent>().enabled = true;
+        owner.transform.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         
         //owner.transform.localPosition = Vector3.forward * pDistance;
 

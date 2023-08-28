@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using LuaInterface;
+using UnityEngine;
+using UnityEditor;
 
 public static class DelegateFactory
 {

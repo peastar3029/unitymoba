@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "NTG/Battle/RoleDiffuseOutline" {
 Properties {
 	_MainTex ("Base (RGB)", 2D) = "white" {}
@@ -26,7 +28,7 @@ SubShader {
 			v2f o;   
 			float4 v2 = v.vertex;
 			v2.xyz += v.normal*0.02;
-			o.pos = mul (UNITY_MATRIX_MVP, v2);  
+			o.pos = UnityObjectToClipPos (v2);  
 
 			return o;    
 		}

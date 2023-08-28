@@ -1,6 +1,4 @@
-﻿using System.Runtime.Remoting.Messaging;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 
 public class NTGBattleEquipController : MonoBehaviour
 {

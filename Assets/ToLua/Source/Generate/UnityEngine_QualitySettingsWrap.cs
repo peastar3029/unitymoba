@@ -294,7 +294,7 @@ public class UnityEngine_QualitySettingsWrap
 	{
 		try
 		{
-			LuaDLL.lua_pushinteger(L, UnityEngine.QualitySettings.masterTextureLimit);
+			LuaDLL.lua_pushinteger(L, UnityEngine.QualitySettings.globalTextureMipmapLimit);
 			return 1;
 		}
 		catch(Exception e)
@@ -476,7 +476,7 @@ public class UnityEngine_QualitySettingsWrap
 	{
 		try
 		{
-			ToLua.Push(L, UnityEngine.QualitySettings.blendWeights);
+			ToLua.Push(L, UnityEngine.QualitySettings.skinWeights);
 			return 1;
 		}
 		catch(Exception e)
@@ -639,7 +639,7 @@ public class UnityEngine_QualitySettingsWrap
 		try
 		{
 			int arg0 = (int)LuaDLL.luaL_checknumber(L, 2);
-			UnityEngine.QualitySettings.masterTextureLimit = arg0;
+			UnityEngine.QualitySettings.globalTextureMipmapLimit = arg0;
 			return 0;
 		}
 		catch(Exception e)
@@ -803,8 +803,8 @@ public class UnityEngine_QualitySettingsWrap
 	{
 		try
 		{
-			UnityEngine.BlendWeights arg0 = (UnityEngine.BlendWeights)ToLua.CheckObject(L, 2, typeof(UnityEngine.BlendWeights));
-			UnityEngine.QualitySettings.blendWeights = arg0;
+			UnityEngine.SkinWeights arg0 = (UnityEngine.SkinWeights)ToLua.CheckObject(L, 2, typeof(UnityEngine.SkinWeights));
+			UnityEngine.QualitySettings.skinWeights = arg0;
 			return 0;
 		}
 		catch(Exception e)

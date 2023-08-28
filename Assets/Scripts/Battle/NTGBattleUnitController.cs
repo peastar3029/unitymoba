@@ -295,7 +295,7 @@ public class NTGBattleUnitController : MonoBehaviour
     }
 
     public NTGBattleMainController mainController;
-    public NavMeshAgent navAgent;
+    public UnityEngine.AI.NavMeshAgent navAgent;
 
     public NTGBattleSkillController[] skills;
     public NTGBattlePassiveSkillController[] pSkills;
@@ -349,7 +349,7 @@ public class NTGBattleUnitController : MonoBehaviour
     //    }
     //}
 
-    private NavMeshPath currentPath;
+    private UnityEngine.AI.NavMeshPath currentPath;
     private Vector3[] currentPathCorners = new Vector3[100];
     public bool currentPathValid;
     public int currentPathCornersCount;
@@ -367,13 +367,13 @@ public class NTGBattleUnitController : MonoBehaviour
             return true;
         }
 
-        var valid = NavMesh.CalculatePath(transform.position, dest, NavMesh.AllAreas, currentPath);
+        var valid = UnityEngine.AI.NavMesh.CalculatePath(transform.position, dest, UnityEngine.AI.NavMesh.AllAreas, currentPath);
         if (!valid)
         {
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(dest, out hit, 1.0f, NavMesh.AllAreas))
+            UnityEngine.AI.NavMeshHit hit;
+            if (UnityEngine.AI.NavMesh.SamplePosition(dest, out hit, 1.0f, UnityEngine.AI.NavMesh.AllAreas))
             {
-                valid = NavMesh.CalculatePath(transform.position, hit.position, NavMesh.AllAreas, currentPath);
+                valid = UnityEngine.AI.NavMesh.CalculatePath(transform.position, hit.position, UnityEngine.AI.NavMesh.AllAreas, currentPath);
             }
         }
 
@@ -456,7 +456,7 @@ public class NTGBattleUnitController : MonoBehaviour
 
         unitUiAnchor = transform.Find("UnitUIAnchor");
         mainController = GameObject.Find("MainController").GetComponent<NTGBattleMainController>();
-        navAgent = GetComponent<NavMeshAgent>();
+        navAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (navAgent != null)
         {
             navAgent.enabled = false;
@@ -477,7 +477,7 @@ public class NTGBattleUnitController : MonoBehaviour
             //navAgent = agent;
             //navAgent.enabled = false;
         }
-        currentPath = new NavMeshPath();
+        currentPath = new UnityEngine.AI.NavMeshPath();
 
         passivesTransform = transform.Find("Passives");
         if (passivesTransform == null)

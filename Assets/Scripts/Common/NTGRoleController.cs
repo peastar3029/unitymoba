@@ -233,7 +233,7 @@ public class NTGRoleController : MonoBehaviour
             var role = Resources.Load<GameObject>(p.Value);
             if (role != null)
             {
-                Transform model = role.transform.FindChild(p.Key);
+                Transform model = role.transform.Find(p.Key);
                 if (model != null)
                 {
                     var obj = Instantiate(model.gameObject);
